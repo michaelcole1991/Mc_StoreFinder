@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout>
+
+	<storefinder_adminhtml_stores_index>
+		<reference name="content">
+			<block type="storefinder/adminhtml_stores" name="stores" />
+		</reference>
+	</storefinder_adminhtml_stores_index>
+
+	<storefinder_adminhtml_stores_edit>
+
+	</storefinder_adminhtml_stores_edit>
+
+</layout>

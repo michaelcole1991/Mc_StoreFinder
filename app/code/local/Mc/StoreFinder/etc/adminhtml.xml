@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <storefinder translate="title" module="storefinder">
+            <title>Storefinder</title>
+            <sort_order>1000000</sort_order>
+            <children>
+               <storefinder translate="title" module="storefinder">
+                    <title>Stores</title>
+                    <sort_order>999</sort_order>
+                    <action>storefinderAdmin/adminhtml_stores</action>
+                </storefinder>
+            </children>
+        </storefinder>
+    </menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<storefinder translate="title" module="storefinder">
+										<title>Store Finder Section</title>
+										<sort_order>10</sort_order>
+									</storefinder>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

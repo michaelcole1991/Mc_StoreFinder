@@ -1,0 +1,17 @@
+<h2><?php echo $this->pageTitle(); ?></h2>
+<div id="map-searchbar">
+	<form action="storefinder/search" id="map-search" method="post">
+		<label for="search_term"><?php echo $this->__('Location:'); ?></label>
+		<input type="search" id="search_term" class="input-text" name="search_term" value="" placeholder="<?php echo $this->__('Street, City or Postcode'); ?>"/>
+		<button id="search-btn" class="button" onclick="searchStores(this); return false;">Search</button>
+	</form>
+</div>
+<aside id="map-results" class="col-left">
+	<ol class="initial">
+		<li><em><?php echo $this->__('Search above to find stores.'); ?></em></li>
+	</ol>
+</aside>
+<seciton id="map-column">
+	<div id="map_canvas"></div>
+</seciton>
+<?php echo $this->getMapSrc(); ?>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mc_StoreFinder>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Mc_StoreFinder>
+  </modules>
+</config>

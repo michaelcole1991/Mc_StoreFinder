@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+  
+	<modules>
+		<Mc_StoreFinder>
+			<version>0.1.0</version>
+		</Mc_StoreFinder>
+	</modules>
+  
+	<frontend>
+		<routers>
+			<storefinder>
+			<use>standard</use>
+			<args>
+				<module>Mc_StoreFinder</module>
+				<frontName>storefinder</frontName>
+			</args>
+			</storefinder>
+		</routers>
+		<layout>
+			<updates>
+				<storefinder>
+					<file>storefinder.xml</file>
+				</storefinder>
+			</updates>
+		</layout>
+	</frontend>
+
+	<global>
+		<helpers>
+			<storefinder>
+				<class>Mc_StoreFinder_Helper</class>
+			</storefinder>
+		</helpers>
+
+		<blocks>
+			<storefinder>
+				<class>Mc_StoreFinder_Block</class>
+			</storefinder>
+		</blocks>
+
+		<models>
+			<storefinder>
+				<class>Mc_StoreFinder_Model</class>
+				<resourceModel>storefinder_resource</resourceModel>
+			</storefinder>
+			<storefinder_resource>
+				<class>Mc_StoreFinder_Model_Resource</class>
+				<entities>		  
+					<stores>
+						<table>storefinder_stores</table>
+					</stores>
+				</entities>
+			</storefinder_resource>
+		</models>
+
+		<resources>
+			<storefinder_setup>
+				<setup>
+					<module>Mc_StoreFinder</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</storefinder_setup>
+			<storefinder_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</storefinder_write>
+			<storefinder_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</storefinder_read>
+		</resources>
+		<!-- rewrite url -->
+		<rewrite>
+			<fancy_url>
+				<from><![CDATA[/storefinder\/store\/(.*)/]]></from>
+				<to><![CDATA[storefinder/index/view/store/$1/]]></to>
+				<complete>1</complete>
+			</fancy_url>
+		</rewrite>
+  	</global>
+
+    <admin>
+        <routers>
+            <storefinder>
+                <use>admin</use>
+                <args>
+                    <module>Mc_StoreFinder</module>
+                    <frontName>storefinderAdmin</frontName>
+                </args>
+            </storefinder>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <storefinder>
+                    <file>storefinder.xml</file>
+                </storefinder>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config> 

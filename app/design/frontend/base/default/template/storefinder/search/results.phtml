@@ -1,0 +1,16 @@
+<ol <?php if(count($this->getStores()) == 0): ?>class="no-results"<?php endif; ?>>
+	<?php if(count($this->getStores()) > 0): $i = 1; ?>
+		<?php foreach ($this->getStores() as $store): ?>
+		<li class="<?php echo $i % 2 == 0 ? 'even': 'odd'; ?>" onclick="scrollToMarker('<?php echo preg_replace('/\s+/', ' ', $store->getPostcode()); ?>', '<?php echo $i; ?>');">
+			<div class="store-details" data-count="<?php echo $i; ?>">
+				<h4><?php echo $store->getStreet(); ?></h4>
+				<p><strong><?php echo $store->getCity(); ?></strong></p>
+				<p><span><?php echo $store->getPostcode(); ?></span></p>
+				<p><a href="<?php echo Mage::getBaseUrl(); ?>storefinder/store/<?php echo $store->getId(); ?>">More Details...</a></p>
+			</div>
+		</li>
+		<?php $i++; endforeach; ?>
+	<?php else: ?>
+		<li><strong>0</strong> results found</li>
+	<?php endif; ?>
+</ol>

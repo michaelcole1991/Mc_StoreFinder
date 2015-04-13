@@ -1,0 +1,23 @@
+<?php $_store = $this->getStore(); ?>
+<h1><?php echo $this->pageTitle(); ?></h1>
+
+<div id="store-map">
+	<div id="map_canvas"></div>
+</div>
+<?php echo $this->getMapSrc(); ?>
+<script type="text/javascript">
+	addMarker('<?php echo $_store->getPostcode(); ?>');
+</script>
+
+<div id="store-address">
+	<h4>Address</h4>
+	<p><?php echo $_store->getStreet(); ?></p>
+	<p><?php echo $_store->getCity(); ?></p>
+	<p><?php echo $_store->getPostcode(); ?></p>
+</div>
+
+<div id="store-details">
+	<h4>Details</h4>
+	<?php echo $_store->getDescription(); ?>
+</div>
+
